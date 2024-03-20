@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Customer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Sky Blue */
+            text-align: center;
+            margin: 20px;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #fff; /* White */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], input[type="number"], input[type="email"], select, textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #87ceeb; /* Light Sky Blue */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Customer</h1>
+    <form action="#" th:action="@{/customers/update/{kycId}}" th:object="${customer}" method="post">
+        <input type="hidden" th:field="*{kycId}" />
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" />
+        
+        <label for="faCode">FA Code:</label>
+        <input type="text" id="faCode" th:field="*{faCode}" />
+        
+        <label for="faURL">FA URL:</label>
+        <input type="text" id="faURL" th:field="*{faURL}" />
+        
+        <label for="agentCode">Agent Code:</label>
+        <input type="text" id="agentCode" th:field="*{agentCode}" />
+        
+        <label for="createDate">Create Date:</label>
+        <input type="text" id="createDate" th:field="*{createDate}" />
+        
+        <label for="nricPassport">NRIC/Passport:</label>
+        <input type="text" id="nricPassport" th:field="*{nricPassport}" />
+        
+        <label for="dateOfBirth">Date of Birth:</label>
+        <input type="text" id="dateOfBirth" th:field="*{dateOfBirth}" />
+        
+        <label for="genderCode">Gender Code:</label>
+        <input type="text" id="genderCode" th:field="*{genderCode}" />
+        
+        <label for="emailAddress">Email Address:</label>
+        <input type="email" id="emailAddress" th:field="*{emailAddress}" />
+        
+        <label for="weight">Weight:</label>
+        <input type="number" id="weight" th:field="*{weight}" />
+        
+        <label for="height">Height:</label>
+        <input type="number" id="height" th:field="*{height}" />
+        
+        <label for="smoker">Smoker:</label>
+        <select id="smoker" th:field="*{smoker}">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+        
+        <label for="maritalStatus">Marital Status:</label>
+        <input type="text" id="maritalStatus" th:field="*{maritalStatus}" />
+        
+        <label for="educationLevel">Education Level:</label>
+        <input type="text" id="educationLevel" th:field="*{educationLevel}" />
+        
+        <label for="languageWritten">Language Written:</label>
+        <input type="text" id="languageWritten" th:field="*{languageWritten}" />
+        
+        <label for="languageSpoken">Language Spoken:</label>
+        <input type="text" id="languageSpoken" th:field="*{languageSpoken}" />
+        
+        <label for="languageSpokenOthers">Language Spoken Others:</label>
+        <input type="text" id="languageSpokenOthers" th:field="*{languageSpokenOthers}" />
+        
+        <label for="languageWrittenOthers">Language Written Others:</label>
+        <input type="text" id="languageWrittenOthers" th:field="*{languageWrittenOthers}" />
+        
+        <label for="nameOfCompanySchool">Name of Company/School:</label>
+        <input type="text" id="nameOfCompanySchool" th:field="*{nameOfCompanySchool}" />
+        
+        <label for="natureOfWork">Nature of Work:</label>
+        <input type="text" id="natureOfWork" th:field="*{natureOfWork}" />
+        
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" th:field="*{occupation}" />
+        
+        <label for="contactNo">Contact Number:</label>
+        <input type="text" id="contactNo" th:field="*{contactNo}" />
+        
+        <label for="address">Address:</label>
+        <textarea id="address" th:field="*{address}" rows="4"></textarea>
+        
+        <!-- Add any other fields as necessary -->
+        
+        <input type="submit" value="Update Customer" />
+    </form>
+</body>
+</html>
+        
+

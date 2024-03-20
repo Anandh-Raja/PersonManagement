@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Customers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Sky Blue */
+            text-align: center;
+            margin: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #87ceeb; /* Light Sky Blue */
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Customers</h1>
+    <table>
+        <tr>
+            <th>KYC ID</th>
+            <th>FA Code</th>
+            <th>FA URL</th>
+            <th>Agent Code</th>
+            <th>Create Date</th>
+            <th>Name</th>
+            <th>NRIC/Passport</th>
+            <th>Date of Birth</th>
+            <th>Gender Code</th>
+            <th>Email Address</th>
+            <th>Weight</th>
+            <th>Height</th>
+            <th>Smoker</th>
+            <th>Marital Status</th>
+            <th>Education Level</th>
+            <th>Language Written</th>
+            <th>Language Spoken</th>
+            <th>Language Spoken Others</th>
+            <th>Language Written Others</th>
+            <th>Name of Company/School</th>
+            <th>Nature of Work</th>
+            <th>Occupation</th>
+            <th>Contact No</th>
+            <th>Address</th>
+        </tr>
+        <!-- Loop through customers and display data -->
+        <tr th:each="customer : ${customers}">
+            <td th:text="${customer.kycId}"></td>
+            <td th:text="${customer.faCode}"></td>
+            <td th:text="${customer.faURL}"></td>
+            <td th:text="${customer.agentCode}"></td>
+            <td th:text="${customer.createDate}"></td>
+            <td th:text="${customer.name}"></td>
+            <td th:text="${customer.nricPassport}"></td>
+            <td th:text="${customer.dateOfBirth}"></td>
+            <td th:text="${customer.genderCode}"></td>
+            <td th:text="${customer.emailAddress}"></td>
+            <td th:text="${customer.weight}"></td>
+            <td th:text="${customer.height}"></td>
+            <td th:text="${customer.smoker}"></td>
+            <td th:text="${customer.maritalStatus}"></td>
+            <td th:text="${customer.educationLevel}"></td>
+            <td th:text="${customer.languageWritten}"></td>
+            <td th:text="${customer.languageSpoken}"></td>
+            <td th:text="${customer.languageSpokenOthers}"></td>
+            <td th:text="${customer.languageWrittenOthers}"></td>
+            <td th:text="${customer.nameOfCompanySchool}"></td>
+            <td th:text="${customer.natureOfWork}"></td>
+            <td th:text="${customer.occupation}"></td>
+            <td th:text="${customer.contactNo}"></td>
+            <td th:text="${customer.address}"></td>
+        </tr>
+    </table>
+</body>
+</html>

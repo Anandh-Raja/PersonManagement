@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create/Update Customer</title>
+    <style>
+        body {
+            background-color: #f0f8ff; /* Sky blue background */
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 0 auto;
+            width: 50%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create/Update Customer</h1>
+    <form action="#" th:action="@{/customers/save}" th:object="${customer}" method="post">
+        <div>
+            <label for="faCode">FA Code:</label>
+            <input type="text" id="faCode" th:field="*{faCode}" />
+        </div>
+        <div>
+            <label for="faURL">FA URL:</label>
+            <input type="text" id="faURL" th:field="*{faURL}" />
+        </div>
+        <div>
+            <label for="agentCode">Agent Code:</label>
+            <input type="text" id="agentCode" th:field="*{agentCode}" />
+        </div>
+        <div>
+            <label for="createDate">Create Date:</label>
+            <input type="text" id="createDate" th:field="*{createDate}" />
+        </div>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{name}" />
+        </div>
+        <div>
+            <label for="nricPassport">NRIC/Passport:</label>
+            <input type="text" id="nricPassport" th:field="*{nricPassport}" />
+        </div>
+        <div>
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input type="text" id="dateOfBirth" th:field="*{dateOfBirth}" />
+        </div>
+        <div>
+            <label for="genderCode">Gender Code:</label>
+            <input type="text" id="genderCode" th:field="*{genderCode}" />
+        </div>
+        <div>
+            <label for="emailAddress">Email Address:</label>
+            <input type="text" id="emailAddress" th:field="*{emailAddress}" />
+        </div>
+        <div>
+            <label for="weight">Weight:</label>
+            <input type="text" id="weight" th:field="*{weight}" />
+        </div>
+        <div>
+            <label for="height">Height:</label>
+            <input type="text" id="height" th:field="*{height}" />
+        </div>
+        <div>
+            <label for="smoker">Smoker:</label>
+            <input type="checkbox" id="smoker" th:field="*{smoker}" />
+        </div>
+        <div>
+            <label for="maritalStatus">Marital Status:</label>
+            <input type="text" id="maritalStatus" th:field="*{maritalStatus}" />
+        </div>
+        <div>
+            <label for="educationLevel">Education Level:</label>
+            <input type="text" id="educationLevel" th:field="*{educationLevel}" />
+        </div>
+        <div>
+            <label for="languageWritten">Language Written:</label>
+            <input type="text" id="languageWritten" th:field="*{languageWritten}" />
+        </div>
+        <div>
+            <label for="languageSpoken">Language Spoken:</label>
+            <input type="text" id="languageSpoken" th:field="*{languageSpoken}" />
+        </div>
+        <div>
+            <label for="languageSpokenOthers">Language Spoken Others:</label>
+            <input type="text" id="languageSpokenOthers" th:field="*{languageSpokenOthers}" />
+        </div>
+        <div>
+            <label for="languageWrittenOthers">Language Written Others:</label>
+            <input type="text" id="languageWrittenOthers" th:field="*{languageWrittenOthers}" />
+        </div>
+        <div>
+            <label for="nameOfCompanySchool">Name of Company/School:</label>
+            <input type="text" id="nameOfCompanySchool" th:field="*{nameOfCompanySchool}" />
+        </div>
+        <div>
+            <label for="natureOfWork">Nature of Work:</label>
+            <input type="text" id="natureOfWork" th:field="*{natureOfWork}" />
+        </div>
+        <div>
+            <label for="occupation">Occupation:</label>
+            <input type="text" id="occupation" th:field="*{occupation}" />
+        </div>
+        <div>
+            <label for="contactNo">Contact Number:</label>
+            <input type="text" id="contactNo" th:field="*{contactNo}" />
+        </div>
+        <div>
+            <label for="address">Address:</label>
+            <input type="text" id="address" th:field="*{address}" />
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
