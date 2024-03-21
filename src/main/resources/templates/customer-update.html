@@ -46,9 +46,15 @@
 </head>
 <body>
     <h1>Update Customer</h1>
+<<<<<<< HEAD
     <form action="/customers/update/{kycId}" th:action="@{'/customers/update/' + ${customer.kycId}}" th:object="${customer}" method="post">
     
         <input type="hidden" th:field="*{kycId}" />
+=======
+    <!--<form action="#" th:action="@{/customers/update/{kycId}}" th:object="${customer}" method="post">-->
+        <form action="/customers/update/{kycId}" th:action="@{'/customers/update/' + ${customer.kycId}}" th:object="${customer}" method="post">
+    <input type="hidden" th:field="*{kycId}" />
+>>>>>>> 8fcdb3358cfec12a2e02f04f00bc132c61556268
         
         <label for="name">Name:</label>
         <input type="text" id="name" th:field="*{name}" />
