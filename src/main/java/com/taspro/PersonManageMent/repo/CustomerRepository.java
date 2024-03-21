@@ -13,7 +13,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     List<Customer> findAll();
 
     Customer findByKycId(Long kycId);
-
+    void deleteByKycId(Long kycId);
     // You can define more custom methods here based on your requirements
 
     // For Dependent entity

@@ -57,7 +57,9 @@ public class CustomerService {
     public void deleteCustomer(Long kycId) {
         customerRepository.deleteById(kycId);
     }
-
+    public void deleteCustomerById(Long kycId) {
+        customerRepository.deleteByKycId(kycId);
+    }
     
 
 //    public List<Dependent> getAllDependentsForCustomer(Customer customer) {

@@ -46,7 +46,8 @@
 </head>
 <body>
     <h1>Update Customer</h1>
-    <form action="#" th:action="@{/customers/update/{kycId}}" th:object="${customer}" method="post">
+    <form action="/customers/update/{kycId}" th:action="@{'/customers/update/' + ${customer.kycId}}" th:object="${customer}" method="post">
+    
         <input type="hidden" th:field="*{kycId}" />
         
         <label for="name">Name:</label>
@@ -127,5 +128,3 @@
     </form>
 </body>
 </html>
-        
-

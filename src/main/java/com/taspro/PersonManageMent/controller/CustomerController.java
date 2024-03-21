@@ -112,7 +112,7 @@ public class CustomerController {
         customerService.createOrUpdateCustomer(customer);
         return "redirect:/customers/all";
     }
-    @GetMapping("/update/{kycId}")
+    /*@GetMapping("/update/{kycId}")
     public String showUpdateCustomerForm(@PathVariable Long kycId, Model model) {
         Customer existingCustomer = customerService.getCustomerById(kycId);
         if (existingCustomer != null) {
@@ -134,7 +134,36 @@ public class CustomerController {
     public String deleteCustomer(@PathVariable Long kycId) {
         customerService.deleteCustomer(kycId);
         return "redirect:/customers/all";
-    }
+    }*/
     
+    @GetMapping("/update/{kycId}")
+    public String showUpdateCustomerForm(@PathVariable Long kycId, Model model) {
+        Customer existingCustomer = customerService.getCustomerById(kycId);
+        if (existingCustomer != null) {
+            model.addAttribute("customer", existingCustomer);
+            return "customer-update";
+        } else {
+            return "error"; // Create an error.html page for handling 404
+        }
+    }
 
+    @PostMapping("/update/{kycId}")
+    public String updateCustomer(@PathVariable Long kycId, @ModelAttribute("customer") Customer updatedCustomer) {
+        updatedCustomer.setKycId(kycId); // Ensure the ID is set
+        customerService.createOrUpdateCustomer(updatedCustomer);
+        return "redirect:/customers/all";
+    }
+
+//    @PostMapping("/delete/{kycId}")
+//    public String deleteCustomer(@PathVariable Long kycId) {
+//        customerService.deleteCustomer(kycId);
+//        return "redirect:/customers/all";
+//    }
+    @DeleteMapping("/delete/{kycId}")
+    public String deleteCustomer(@PathVariable Long kycId) {
+        customerService.deleteCustomer(kycId);
+        return "redirect:/customers/all";
+    }
+
+    
 }

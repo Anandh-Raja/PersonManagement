@@ -31,6 +31,26 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .button-container .update-button {
+            background-color: #4CAF50; /* Green */
+        }
+
+        .button-container .delete-button {
+            background-color: #f44336; /* Red */
+        }
     </style>
 </head>
 <body>
@@ -61,6 +81,7 @@
             <th>Occupation</th>
             <th>Contact No</th>
             <th>Address</th>
+            <th>Actions</th>
         </tr>
         <!-- Loop through customers and display data -->
         <tr th:each="customer : ${customers}">
@@ -88,6 +109,10 @@
             <td th:text="${customer.occupation}"></td>
             <td th:text="${customer.contactNo}"></td>
             <td th:text="${customer.address}"></td>
+            <td class="button-container">
+                <a class="update-button" th:href="@{'/customers/update/' + ${customer.kycId}}">Update</a>
+                <a class="delete-button" th:href="@{'/customers/delete/' + ${customer.kycId}}">Delete</a>
+            </td>
         </tr>
     </table>
 </body>
