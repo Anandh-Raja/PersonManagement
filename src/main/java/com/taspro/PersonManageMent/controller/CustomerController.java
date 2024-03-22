@@ -153,17 +153,12 @@ public class CustomerController {
         customerService.createOrUpdateCustomer(updatedCustomer);
         return "redirect:/customers/all";
     }
-
-//    @PostMapping("/delete/{kycId}")
-//    public String deleteCustomer(@PathVariable Long kycId) {
-//        customerService.deleteCustomer(kycId);
-//        return "redirect:/customers/all";
-//    }
-    @DeleteMapping("/delete/{kycId}")
+    @PostMapping("/delete/{kycId}")
     public String deleteCustomer(@PathVariable Long kycId) {
         customerService.deleteCustomer(kycId);
         return "redirect:/customers/all";
     }
+  
 
     
 }

@@ -2,6 +2,7 @@ package com.taspro.PersonManageMent.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.taspro.PersonManageMent.model.Customer;
 import com.taspro.PersonManageMent.model.Dependent;
@@ -53,14 +54,11 @@ public class CustomerService {
     public Customer createOrUpdateCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
-
+    @Transactional
     public void deleteCustomer(Long kycId) {
         customerRepository.deleteById(kycId);
     }
-    public void deleteCustomerById(Long kycId) {
-        customerRepository.deleteByKycId(kycId);
-    }
-    
+
 
 //    public List<Dependent> getAllDependentsForCustomer(Customer customer) {
 //        return customerRepository.findAllByCustomer(customer);

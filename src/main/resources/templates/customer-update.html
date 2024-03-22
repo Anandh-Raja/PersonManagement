@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Update Customer</title>
+    <title>Update Customer Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -45,16 +45,15 @@
     </style>
 </head>
 <body>
-    <h1>Update Customer</h1>
-<<<<<<< HEAD
-    <form action="/customers/update/{kycId}" th:action="@{'/customers/update/' + ${customer.kycId}}" th:object="${customer}" method="post">
+    <h1>Person Management</h1>
+    <h2>Update Customer</h2>
+
     
-        <input type="hidden" th:field="*{kycId}" />
-=======
+
     <!--<form action="#" th:action="@{/customers/update/{kycId}}" th:object="${customer}" method="post">-->
         <form action="/customers/update/{kycId}" th:action="@{'/customers/update/' + ${customer.kycId}}" th:object="${customer}" method="post">
     <input type="hidden" th:field="*{kycId}" />
->>>>>>> 8fcdb3358cfec12a2e02f04f00bc132c61556268
+
         
         <label for="name">Name:</label>
         <input type="text" id="name" th:field="*{name}" />
@@ -130,7 +129,12 @@
         
         <!-- Add any other fields as necessary -->
         
-        <input type="submit" value="Update Customer" />
+        <input type="submit" value="Update Customer" onclick="return confirmSubmit()" />
     </form>
+     <script>
+        function confirmSubmit() {
+            return confirm("Do you want to update the customer?");
+        }
+    </script>
 </body>
 </html>
